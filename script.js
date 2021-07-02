@@ -13,6 +13,8 @@ function showTime() {
 
     var now = new Date();
     var ms = now.getMilliseconds();
+    
+    console.log("Hello world");
 
     if (mode != lastmode) {
         lastmode = mode;
