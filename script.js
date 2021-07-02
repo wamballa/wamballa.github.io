@@ -32,7 +32,7 @@ function showTime() {
         s = (s < 10) ? "0" + s : s;
         if (burnProtect) {
             var offset = Math.sin(m / 60 * 2 * Math.PI) * 6 + 47;
-            $('#TextContainer').css('top', offset + '%');
+            //$('#TextContainer').css('top', offset + '%');
         }
     }
 
