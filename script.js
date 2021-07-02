@@ -23,7 +23,7 @@ function showTime() {
 
     if (mode == 'clock') {
 
-            console.log("Hello world... "+ms);
+
         
         var h = now.getHours();
         var m = now.getMinutes();
@@ -37,6 +37,8 @@ function showTime() {
             //$('#TextContainer').css('top', offset + '%');
         //}
     }
+    
+                console.log("Hello world... "+h);
 
     document.getElementById("hour").innerText = h;
     document.getElementById("min").innerText = m;
