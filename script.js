@@ -14,7 +14,7 @@ function showTime() {
     var now = new Date();
     var ms = now.getMilliseconds();
     
-    console.log("Hello world");
+    console.log("Hello world "+ms);
 
     if (mode != lastmode) {
         lastmode = mode;
