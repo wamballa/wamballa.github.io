@@ -14,7 +14,7 @@ function showTime() {
     var now = new Date();
     var ms = now.getMilliseconds();
     
-    console.log("Hello world... "+ms);
+
 
     if (mode != lastmode) {
         lastmode = mode;
@@ -23,6 +23,8 @@ function showTime() {
 
     if (mode == 'clock') {
 
+            console.log("Hello world... "+ms);
+        
         var h = now.getHours();
         var m = now.getMinutes();
         var s = now.getSeconds();
