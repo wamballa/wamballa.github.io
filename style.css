@@ -22,7 +22,7 @@ body {
     transform: translateY(-50%);
 }
 
-#hour, #min, #sec {
+#hour, #min, #sec, #hoursep {
     font-family: "Gameplay";
     font-weight: bold;
 }
