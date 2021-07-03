@@ -62,7 +62,7 @@ function showTime() {
 
 function resizeText() {
     
-    var viewWidth = document.getElementById("TextContainer").width();
+    var viewWidth = document.getElementById("TextContainer").offsetWidth;
     console.log("View width = "+viewWidth);
     
     /*
