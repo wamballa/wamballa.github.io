@@ -3,7 +3,7 @@ var countDownTime = '2020-07-19T00:00:00';
 var burnProtect = 1;
 
 var lastmode = '';
-var lastViewWidth;
+var lastWidth;
 var lastHour;
 
 function showTime() {
@@ -63,7 +63,33 @@ function showTime() {
 function resizeText() {
     
     var viewWidth = document.getElementById("TextContainer").offsetWidth;
-    console.log("View width = "+viewWidth);
+
+    if (viewWidth == lastWidth)
+    {
+        return;
+    }
+    lastWidth = viewWidth;
+
+    let textSize = document.getElementById("TextCell").offsetWidth;
+    let textWidth = window.getComputedStyle(document.documentElement).getPropertyValue('font-size');
+
+    //textSize = textSize.substring(0,)
+
+    console.log("viewWidth  = "+viewWidth);
+    console.log("textSize  = "+textSize);
+    console.log("textWidth = "+textWidth);
+    // let temp = viewWidth - parseInt(textWidth,10);
+    // console.log("viewWidth - textWidth = "+temp );
+
+    if (Math.abs(viewWidth - parseInt(textWidth,10)) / viewWidth > 0.1) {
+    
+        console.log("DO SOMETHING");
+        let newTextSize = viewWidth / parseInt(textWidth,10) * textSize * 0.04;
+
+        document.documentElement.style.setProperty('font-size', newTextSize + 'px');
+        // document.documentElement.style.setProperty('visibility', 'visible');
+    }
+
     
     /*
     var viewWidth = $('#TextContainer').width();
