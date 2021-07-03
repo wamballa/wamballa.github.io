@@ -69,7 +69,7 @@ function resizeText() {
     var viewWidth = $('#TextContainer').width();
 
     if (viewWidth == lastViewWidth) {
-        return;
+        // return;
     }
 
     lastViewWidth = viewWidth;
@@ -79,7 +79,7 @@ function resizeText() {
     textSize = textSize.substring(0, textSize.length - 2);
 
     if (Math.abs(viewWidth - textWidth) / viewWidth > 0.1) {
-        var newTextSize = viewWidth / textWidth * textSize * 0.95;
+        var newTextSize = viewWidth / textWidth * textSize * 0.05;
         $('#TextCell').css('font-size', newTextSize + 'px');
         $('#TextCell').css('visibility', 'visible');
     }
