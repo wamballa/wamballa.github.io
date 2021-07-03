@@ -57,7 +57,7 @@ function getLocalHour( h ){
 
     const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
     if (timezone == "Europe/Zurich"){
-        return h-1;
+        return h;
     }
     if (timezone == "Europe/London"){
         return h;
