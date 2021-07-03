@@ -3,7 +3,7 @@ var countDownTime = '2020-07-19T00:00:00';
 var burnProtect = 1;
 
 var lastmode = '';
-var lastWidth;
+var lastViewWidth;
 var lastHour;
 
 function showTime() {
@@ -57,46 +57,15 @@ function getLocalHour( h ){
 
     const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
     if (timezone == "Europe/Zurich"){
-        return h-1;
+        return h;
     }
     if (timezone == "Europe/London"){
-        return h;
+        return h-1;
     }
 
 }
 
 function resizeText() {
-    
-    var viewWidth = document.getElementById("TextContainer").offsetWidth;
-
-    if (viewWidth == lastWidth)
-    {
-        return;
-    }
-    lastWidth = viewWidth;
-
-    let textSize = document.getElementById("TextCell").offsetWidth;
-    let textWidth = window.getComputedStyle(document.documentElement).getPropertyValue('font-size');
-
-    //textSize = textSize.substring(0,)
-
-    console.log("viewWidth  = "+viewWidth);
-    console.log("textSize  = "+textSize);
-    console.log("textWidth = "+textWidth);
-    // let temp = viewWidth - parseInt(textWidth,10);
-    // console.log("viewWidth - textWidth = "+temp );
-
-    if (Math.abs(viewWidth - parseInt(textWidth,10)) / viewWidth > 0.1) {
-    
-        console.log("Resize");
-        let newTextSize = viewWidth / parseInt(textWidth,10) * textSize * 0.01;
-
-        document.documentElement.style.setProperty('font-size', newTextSize + 'px');
-        // document.documentElement.style.setProperty('visibility', 'visible');
-    }
-
-    
-    /*
     var viewWidth = $('#TextContainer').width();
 
     if (viewWidth == lastViewWidth) {
@@ -114,5 +83,5 @@ function resizeText() {
         $('#TextCell').css('font-size', newTextSize + 'px');
         $('#TextCell').css('visibility', 'visible');
     }
-    */
 }
+
