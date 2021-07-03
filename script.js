@@ -22,7 +22,7 @@ function showTime() {
     if (mode == 'clock') {
 
         var h = now.getHours();
-        //h = getLocalHour(h);
+        h = getLocalHour(h);
         var m = now.getMinutes();
         var s = now.getSeconds();
 
