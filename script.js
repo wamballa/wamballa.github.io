@@ -57,7 +57,7 @@ function showTime() {
     setTimeout(showTime, timer);
 
     //setTimeout(resizeText, 50);
-    //resizeText();
+    resizeText();
 }
 
 function resizeText() {
