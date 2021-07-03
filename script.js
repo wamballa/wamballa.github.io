@@ -61,6 +61,11 @@ function showTime() {
 }
 
 function resizeText() {
+    
+    var viewWidth = document.getElementbyId("TextContainer).width();
+    console.log("View width = "+viewWidth);
+    
+    /*
     var viewWidth = $('#TextContainer').width();
 
     if (viewWidth == lastViewWidth) {
@@ -78,4 +83,5 @@ function resizeText() {
         $('#TextCell').css('font-size', newTextSize + 'px');
         $('#TextCell').css('visibility', 'visible');
     }
+    */
 }
