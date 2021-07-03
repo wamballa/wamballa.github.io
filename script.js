@@ -84,7 +84,7 @@ function resizeText() {
     if (Math.abs(viewWidth - parseInt(textWidth,10)) / viewWidth > 0.1) {
     
         console.log("DO SOMETHING");
-        let newTextSize = viewWidth / parseInt(textWidth,10) * textSize * 0.04;
+        let newTextSize = viewWidth / parseInt(textWidth,10) * textSize * 0.03;
 
         document.documentElement.style.setProperty('font-size', newTextSize + 'px');
         // document.documentElement.style.setProperty('visibility', 'visible');
