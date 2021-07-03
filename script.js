@@ -13,12 +13,6 @@ function showTime() {
 
     var now = new Date();
     var ms = now.getMilliseconds();
-    
-    const offset = now.getTimezoneOffset();
-    console.log(offset);
-
-    const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    console.log(timezone);
 
     if (mode != lastmode) {
         lastmode = mode;
@@ -28,6 +22,7 @@ function showTime() {
     if (mode == 'clock') {
 
         var h = now.getHours();
+        h = getLocalHour(h);
         var m = now.getMinutes();
         var s = now.getSeconds();
 
@@ -55,9 +50,19 @@ function showTime() {
     }
 
     setTimeout(showTime, timer);
-
-    //setTimeout(resizeText, 50);
     resizeText();
+}
+
+function getLocalHour( h ){
+
+    const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    if (timezone == "Europe/Zurich"){
+        return h-1;
+    }
+    if (timezone == "Europe/London"){
+        return h;
+    }
+
 }
 
 function resizeText() {
