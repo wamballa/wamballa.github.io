@@ -14,7 +14,11 @@ function showTime() {
     var now = new Date();
     var ms = now.getMilliseconds();
     
+    const offset = now.getTimezoneOffset();
+    console.log(offset);
 
+    const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    console.log(timezone);
 
     if (mode != lastmode) {
         lastmode = mode;
@@ -23,8 +27,6 @@ function showTime() {
 
     if (mode == 'clock') {
 
-
-        
         var h = now.getHours();
         var m = now.getMinutes();
         var s = now.getSeconds();
@@ -38,8 +40,6 @@ function showTime() {
         //}
     }
     
-                console.log("Hello world... "+h);
-
     document.getElementById("hour").innerText = h;
     document.getElementById("min").innerText = m;
     document.getElementById("sec").innerText = s;
@@ -83,8 +83,8 @@ function resizeText() {
 
     if (Math.abs(viewWidth - parseInt(textWidth,10)) / viewWidth > 0.1) {
     
-        console.log("DO SOMETHING");
-        let newTextSize = viewWidth / parseInt(textWidth,10) * textSize * 0.03;
+        console.log("Resize");
+        let newTextSize = viewWidth / parseInt(textWidth,10) * textSize * 0.02;
 
         document.documentElement.style.setProperty('font-size', newTextSize + 'px');
         // document.documentElement.style.setProperty('visibility', 'visible');
