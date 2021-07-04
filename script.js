@@ -22,7 +22,7 @@ function showTime() {
     if (mode == 'clock') {
 
         var h = now.getHours();
-        h = getLocalHour(h);
+        //h = getLocalHour(h);
         var m = now.getMinutes();
         var s = now.getSeconds();
 
@@ -79,7 +79,7 @@ function resizeText() {
     textSize = textSize.substring(0, textSize.length - 2);
 
     if (Math.abs(viewWidth - textWidth) / viewWidth > 0.1) {
-        var newTextSize = viewWidth / textWidth * textSize * 0.05;
+        var newTextSize = viewWidth / textWidth * textSize * 0.95;
         $('#TextCell').css('font-size', newTextSize + 'px');
         $('#TextCell').css('visibility', 'visible');
     }
