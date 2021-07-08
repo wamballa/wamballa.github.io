@@ -6,7 +6,7 @@
     <title>Unity WebGL Player | Kiosk</title>
   </head>
   <body style="text-align: center">
-    <canvas id="unity-canvas" width=1366 height=768 style="width: 1366px; height: 768px; background: #231F20"></canvas>
+    <canvas id="unity-canvas" width=960 height=600 style="width: 960px; height: 600px; background: #231F20"></canvas>
     <script src="Build/wamballa.github.io.loader.js"></script>
     <script>
       createUnityInstance(document.querySelector("#unity-canvas"), {
@@ -17,7 +17,7 @@
         companyName: "DefaultCompany",
         productName: "Kiosk",
         productVersion: "1.0",
-        matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+        matchWebGLToCanvasSize: true, // Uncomment this to separately control WebGL canvas render size and DOM element size.
         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
       });
     </script>
